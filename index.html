@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClearSites — Webs para locales gastronómicos de Buenos Aires</title>
+<meta name="description" content="Hago webs para locales gastronómicos de barrio en Buenos Aires: menú con precios, horarios, mapa y pedido por WhatsApp en una sola página. $200.000 ARS en un pago, sin mensualidad, publicada en 7 a 14 días. Soy Izan y cada web la hago yo.">
+<link rel="canonical" href="https://clearsites.com.ar/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="ClearSites">
+<meta property="og:title" content="ClearSites — Webs para locales gastronómicos de Buenos Aires">
+<meta property="og:description" content="Menú, horarios, mapa y pedido por WhatsApp en una sola página. $200.000 ARS en un pago, sin mensualidad. Hecha por Izan, en Buenos Aires.">
+<meta property="og:url" content="https://clearsites.com.ar/">
+<meta property="og:image" content="https://clearsites.com.ar/img/demo-cafeteria-desktop.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="750">
+<meta property="og:image:alt" content="Captura de una de las webs de muestra de ClearSites: la demo de Café Membrillo.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111'/%3E%3Ctext x='16' y='23' font-family='Arial,Helvetica,sans-serif' font-size='21' font-weight='700' text-anchor='middle' fill='%23fff'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Schibsted+Grotesk:wght@400;500;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ClearSites",
+  "url": "https://clearsites.com.ar/",
+  "description": "Webs para locales gastronómicos de barrio en Buenos Aires: menú con precios, horarios, mapa y pedido por WhatsApp en una sola página.",
+  "image": "https://clearsites.com.ar/img/demo-cafeteria-desktop.jpg",
+  "telephone": "+54 9 11 7250-5735",
+  "email": "diazgomezizan@gmail.com",
+  "priceRange": "$200.000 ARS",
+  "areaServed": {"@type": "City", "name": "Buenos Aires"},
+  "address": {"@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR"},
+  "founder": {"@type": "Person", "name": "Izan", "url": "https://izan.me"},
+  "sameAs": ["https://www.instagram.com/izandiazph", "https://izan.me"]
+}
+</script>
+<style>
+:root{--bg:#fff;--ink:#111;--muted:#5a5a5a;--rule:#d6d6d6;--block:#f4f4f2;--sans:"Schibsted Grotesk",Helvetica,Arial,sans-serif;--mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);font-feature-settings:"kern"}
+img{display:block;max-width:100%;height:auto;background:var(--block)}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.16em;transition:color .15s}
+a:hover{color:var(--muted)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+h1,h2,h3,p,ol,ul,table{margin:0}
+.wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+.rule{border-top:1px solid var(--rule)}
+.mono{font:400 12px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+.top{border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{font-weight:500;text-decoration:none;font-size:18px;padding:10px 0}
+.menu{display:flex;gap:4px 24px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.menu a{text-decoration:none;padding:12px 0;display:inline-block;color:var(--muted)}
+.menu a:hover{color:var(--ink);text-decoration:underline}
+.wa{text-decoration:none;font-variant-numeric:tabular-nums;padding:10px 0;white-space:nowrap}
+.wa:hover{text-decoration:underline}
+.toggle{display:none;background:none;border:1px solid var(--ink);color:var(--ink);font:500 14px var(--sans);padding:10px 14px;min-height:44px;cursor:pointer}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(2.1rem,4.6vw,4rem);line-height:1.08;font-weight:500;letter-spacing:-.02em;max-width:24ch}
+.lead{margin-top:32px;font-size:clamp(1.1rem,1.4vw,1.3rem);line-height:1.5;max-width:56ch}
+.hero .lead a{color:var(--ink)}
+.cover{padding:0 0 24px}
+.cover img{border:1px solid var(--rule);width:100%}
+.cover figcaption{margin-top:12px;font-size:15px;color:var(--muted)}
+
+/* sections */
+section{padding:72px 0 0}
+.head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:20px 0 40px}
+.head h2{grid-column:1/4;font-size:1.05rem;font-weight:500}
+.head p{grid-column:5/11;font-size:1.3rem;line-height:1.4}
+
+/* qué incluye: rows */
+.rows{list-style:none;padding:0}
+.rows li{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:26px 0;border-top:1px solid var(--rule)}
+.rows li:last-child{border-bottom:1px solid var(--rule)}
+.rows h3{grid-column:1/5;font-size:1.5rem;font-weight:500;letter-spacing:-.01em;line-height:1.2}
+.rows p{grid-column:5/11;color:var(--muted)}
+.note{margin-top:24px;max-width:70ch;color:var(--muted)}
+
+/* demos: fichas */
+.ficha{padding:40px 0 48px;border-top:1px solid var(--rule)}
+.shots{display:grid;grid-template-columns:1200fr 346fr;gap:16px;align-items:start}
+.shots img{width:100%;border:1px solid var(--rule)}
+.ficha-text{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:28px}
+.ficha-text h3{grid-column:1/7;font-size:clamp(1.4rem,2vw,1.9rem);font-weight:500;letter-spacing:-.015em;line-height:1.2;max-width:22ch}
+.meta{grid-column:7/11;display:grid;grid-template-columns:auto 1fr;gap:8px 20px;align-content:start;margin:0}
+.meta dt{font:400 12px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.meta dd{margin:0;font-size:15px;line-height:1.6}
+.ver{grid-column:11/13;justify-self:start;font-size:15px;line-height:1.6}
+
+/* honest block */
+.plain{background:var(--block);padding:48px 32px;font-size:clamp(1.25rem,2vw,1.75rem);line-height:1.35;letter-spacing:-.01em;max-width:none}
+.plain p{max-width:32ch}
+
+/* precio */
+.price{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.price .num{grid-column:1/5;font-size:clamp(2.4rem,5.5vw,4.5rem);line-height:1;font-weight:500;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.price .num small{display:block;font-size:1.05rem;letter-spacing:0;font-weight:400;color:var(--muted);margin-top:14px;line-height:1.4}
+.price table{grid-column:5/13;border-collapse:collapse;width:100%}
+.price th,.price td{text-align:left;vertical-align:top;padding:14px 0;border-top:1px solid var(--rule);font-weight:400}
+.price tr:last-child th,.price tr:last-child td{border-bottom:1px solid var(--rule)}
+.price th{width:32%;padding-right:24px;color:var(--muted)}
+
+/* proceso */
+.steps{list-style:none;padding:0;counter-reset:s}
+.steps li{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:28px 0;border-top:1px solid var(--rule);counter-increment:s}
+.steps li:last-child{border-bottom:1px solid var(--rule)}
+.steps li::before{content:"0" counter(s);grid-column:1/2;font:400 13px/1.9 var(--mono);color:var(--muted)}
+.steps h3{grid-column:2/5;font-size:1.3rem;font-weight:500;line-height:1.25;letter-spacing:-.01em}
+.steps p{grid-column:5/11;color:var(--muted)}
+
+/* quién soy */
+.me{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+.me img{grid-column:1/5;width:100%}
+.me div{grid-column:6/12}
+.me .hola{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-bottom:24px}
+.me p{font-size:1.15rem;line-height:1.5}
+.me p+p{margin-top:18px}
+.me p a{color:var(--ink)}
+
+/* preguntas */
+.faq{display:grid;grid-template-columns:repeat(12,1fr);gap:40px 24px}
+.faq div{grid-column:span 6}
+.faq h3{font-size:1.15rem;font-weight:500;margin-bottom:8px}
+.faq p{color:var(--muted)}
+
+/* contacto */
+.contact{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding-bottom:16px}
+.contact>div{grid-column:span 6;border-top:1px solid var(--ink);padding-top:16px}
+.contact .mono{display:block;margin-bottom:10px}
+.contact a.big{display:inline-block;font-size:clamp(1.5rem,3.4vw,2.9rem);line-height:1.15;font-weight:500;letter-spacing:-.02em;text-decoration:none;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;padding:4px 0}
+.contact a.big:hover{text-decoration:underline;color:var(--ink)}
+.contact p{margin-top:14px;color:var(--muted);max-width:40ch}
+.also{margin-top:40px;color:var(--muted)}
+.also a{display:inline-block;padding:8px 0;margin-right:24px}
+
+footer{margin-top:72px;border-top:1px solid var(--rule);padding:24px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+
+@media (max-width:899px){
+  .js .menu{display:none;width:100%;flex-direction:column;gap:0;padding:8px 0 12px;border-top:1px solid var(--rule)}
+  .js .menu.open{display:flex}
+  .toggle{display:inline-block}
+  .top .wrap{flex-wrap:wrap;row-gap:0}
+  .top .brand{margin-right:auto}
+  .wa{font-size:15px}
+  .head,.rows li,.ficha-text,.price,.steps li,.me,.faq,.contact{display:block}
+  .head p,.rows p,.steps p,.faq div{margin-top:10px}
+  .head{padding-bottom:28px}
+  .rows h3,.steps h3{font-size:1.25rem}
+  .steps li::before{display:block;margin-bottom:6px}
+  .shots{grid-template-columns:1fr}
+  .shots img:last-child{width:56%}
+  .meta{margin-top:18px;max-width:28rem}
+  .ver{display:inline-block;margin-top:18px;padding:6px 0}
+  .plain{padding:32px 20px}
+  .price table{margin-top:28px}
+  .price th{width:36%}
+  .me img{max-width:360px}
+  .me div{margin-top:28px}
+  .faq div+div{margin-top:32px}
+  .contact>div+div{margin-top:32px}
+  section{padding-top:56px}
+  .hero{padding-top:40px}
+  .wrap{padding:0 16px}
+}
+@media (min-width:900px) and (max-width:1199px){
+  .rows h3{grid-column:1/5}.rows p,.steps p,.head p{grid-column:5/13}
+  .ficha-text h3{grid-column:1/7}.meta{grid-column:7/11}
+  .me img{grid-column:1/5}.me div{grid-column:6/13}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.className="js"</script>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">ClearSites</a>
+    <nav aria-label="Secciones">
+      <ul class="menu" id="menu">
+        <li><a href="#incluye">Qué incluye</a></li>
+        <li><a href="#demos">Demos</a></li>
+        <li><a href="#precio">Precio</a></li>
+        <li><a href="#proceso">Cómo trabajo</a></li>
+        <li><a href="#quien">Quién soy</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+      </ul>
+    </nav>
+    <a class="wa" href="https://wa.me/5491172505735?text=Hola%20Izan%2C%20quiero%20el%20repaso%20gratis%20de%20mi%20local.">+54 9 11 7250-5735</a>
+    <button class="toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="statement">
+    <div class="wrap">
+      <h1 id="statement">Hago webs para locales gastronómicos de Buenos Aires. El menú, los horarios, el mapa y el WhatsApp en una sola página, publicada en 7 a 14 días.</h1>
+      <p class="lead">Cuesta $200.000 en un solo pago, sin mensualidad, con el dominio del primer año a tu nombre. Antes de cobrarte nada te mando gratis <a href="#contacto">un repaso</a> de cómo aparece tu local en Google Maps, en Instagram y en tu web, si tenés.</p>
+    </div>
+  </section>
+
+  <div class="wrap cover">
+    <figure style="margin:0">
+      <img src="img/demo-cafeteria-desktop.jpg" width="1200" height="750" alt="Captura de la demo de Café Membrillo: foto de una cafetera de filtro, nombre del local, dirección en Villa Crespo, botón para ver la carta y el horario de hoy.">
+      <figcaption>Café Membrillo, Villa Crespo. Una de las cuatro webs de muestra que hay más abajo; el local es inventado.</figcaption>
+    </figure>
+  </div>
+
+  <section id="incluye" aria-labelledby="h-incluye">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-incluye">Qué incluye</h2>
+        <p>Una sola página, larga, que responde lo que la gente pregunta antes de ir o pedir: qué vendés, a qué precio, cuándo abrís, dónde estás y cómo te pide.</p>
+      </div>
+      <ul class="rows">
+        <li><h3>Diseño a medida</h3><p>Colores, tipografía y orden pensados para tu local, no una plantilla con tu logo pegado. Vos la ves en tu celular y me decís qué cambiar: hasta dos rondas de cambios antes de publicar.</p></li>
+        <li><h3>Textos</h3><p>Los escribo yo con lo que me contás: qué vendés, qué se pide más, desde cuándo están, cómo llegar. Vos los revisás antes de que salgan.</p></li>
+        <li><h3>Menú con precios</h3><p>La carta completa, por categorías, legible en el celular. Los precios en pesos, tal como me los pasás.</p></li>
+        <li><h3>Horarios</h3><p>Los de cada día, arriba de todo, y una oración que dice si en este momento el local está abierto o a qué hora abre.</p></li>
+        <li><h3>Mapa y cómo llegar</h3><p>Mapa de Google con la dirección y el botón de cómo llegar, para que lo abran desde el celular.</p></li>
+        <li><h3>Botón de WhatsApp</h3><p>Con el mensaje ya escrito, para que el cliente solo tenga que tocar y mandar. El número es el tuyo.</p></li>
+        <li><h3>Publicación</h3><p>La subo, la conecto al dominio y te paso los accesos. No tenés que tocar nada.</p></li>
+        <li><h3>Dominio del primer año</h3><p>tulocal.com.ar, o el que esté libre, registrado a tu nombre y pagado el primer año.</p></li>
+      </ul>
+      <p class="note">Con precio aparte, si lo querés: mantenimiento mensual (cambios de precios, fotos y horarios), email con tu dominio y reservas.</p>
+    </div>
+  </section>
+
+  <section id="demos" aria-labelledby="h-demos">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-demos">Demos</h2>
+        <p>Cuatro webs de locales inventados, una por rubro, hechas por mí para mostrar cómo trabajo. Entrá, tocá los botones y abrilas desde el celular.</p>
+      </div>
+
+      <article class="ficha">
+        <div class="shots">
+          <img src="img/demo-parrilla-desktop.jpg" width="1200" height="750" loading="lazy" alt="Captura de la demo de Fuego Lento: nombre en letras grandes, texto de presentación, número de WhatsApp y una franja con horarios de hoy, dirección y pedidos.">
+          <img src="img/demo-parrilla-mobile.jpg" width="780" height="1688" loading="lazy" alt="La misma demo en un celular: nombre, presentación, número de WhatsApp y horarios de hoy.">
+        </div>
+        <div class="ficha-text">
+          <h3>Una parrilla de Villa Urquiza que toma pedidos y reservas por WhatsApp</h3>
+          <dl class="meta">
+            <dt>Local</dt><dd>Fuego Lento</dd>
+            <dt>Rubro</dt><dd>Parrilla</dd>
+            <dt>Barrio</dt><dd>Villa Urquiza</dd>
+            <dt>Incluye</dt><dd>Carta con precios, horarios de hoy, mapa, pedidos y reservas por WhatsApp</dd>
+          </dl>
+          <a class="ver" href="demos/parrilla/">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="ficha">
+        <div class="shots">
+          <img src="img/demo-cafeteria-desktop.jpg" width="1200" height="750" loading="lazy" alt="Captura de la demo de Café Membrillo: foto grande del café, nombre, dirección, botón para ver la carta y horario de hoy.">
+          <img src="img/demo-cafeteria-mobile.jpg" width="780" height="1688" loading="lazy" alt="La misma demo en un celular.">
+        </div>
+        <div class="ficha-text">
+          <h3>Un café de especialidad en Villa Crespo con la carta y el horario de hoy arriba de todo</h3>
+          <dl class="meta">
+            <dt>Local</dt><dd>Café Membrillo</dd>
+            <dt>Rubro</dt><dd>Cafetería</dd>
+            <dt>Barrio</dt><dd>Villa Crespo</dd>
+            <dt>Incluye</dt><dd>Carta con precios, horarios, mapa, pedido por WhatsApp</dd>
+          </dl>
+          <a class="ver" href="demos/cafeteria/">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="ficha">
+        <div class="shots">
+          <img src="img/demo-pizzeria-desktop.jpg" width="1200" height="750" loading="lazy" alt="Captura de la demo de Pizzería Don Fausto: titular sobre muzza al molde y fainá, foto de una pizza en la mesa, horarios y número de WhatsApp en rojo.">
+          <img src="img/demo-pizzeria-mobile.jpg" width="780" height="1688" loading="lazy" alt="La misma demo en un celular.">
+        </div>
+        <div class="ficha-text">
+          <h3>Una pizzería de Caballito con delivery propio y la carta por categorías</h3>
+          <dl class="meta">
+            <dt>Local</dt><dd>Pizzería Don Fausto</dd>
+            <dt>Rubro</dt><dd>Pizzería</dd>
+            <dt>Barrio</dt><dd>Caballito</dd>
+            <dt>Incluye</dt><dd>Carta por categorías, horarios, aviso de feriado, mapa, pedido por WhatsApp</dd>
+          </dl>
+          <a class="ver" href="demos/pizzeria/">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="ficha">
+        <div class="shots">
+          <img src="img/demo-panaderia-desktop.jpg" width="1200" height="750" loading="lazy" alt="Captura de la demo de Horno Lindo: nombre en letras grandes y condensadas, dirección en Colegiales, horarios y botón de pedido por WhatsApp.">
+          <img src="img/demo-panaderia-mobile.jpg" width="780" height="1688" loading="lazy" alt="La misma demo en un celular.">
+        </div>
+        <div class="ficha-text">
+          <h3>Una panadería de Colegiales que toma encargos de tortas con 48 horas</h3>
+          <dl class="meta">
+            <dt>Local</dt><dd>Panadería Horno Lindo</dd>
+            <dt>Rubro</dt><dd>Panadería</dd>
+            <dt>Barrio</dt><dd>Colegiales</dd>
+            <dt>Incluye</dt><dd>Carta con precios, encargos, horarios, mapa, pedido por WhatsApp</dd>
+          </dl>
+          <a class="ver" href="demos/panaderia/">Ver demo</a>
+        </div>
+      </article>
+
+      <div class="plain">
+        <p>Estoy arrancando y todavía no tengo clientes publicados. Las cuatro webs de arriba son demos de locales inventados, hechas por mí, para que se vea cómo trabajo. Por eso acá no hay reseñas ni logos de clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="precio" aria-labelledby="h-precio">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-precio">Cuánto cuesta</h2>
+        <p>Un solo precio por la web completa, publicada y funcionando con tu dominio. No hay cuotas después.</p>
+      </div>
+      <div class="price">
+        <p class="num">$200.000 ARS<small>Pago único. Precio de noviembre de 2026; se revisa por trimestre.</small></p>
+        <table>
+          <tbody>
+            <tr><th scope="row">Pago</th><td>50% al empezar y 50% al entregar, cuando la web ya está publicada.</td></tr>
+            <tr><th scope="row">Mensualidad</th><td>Ninguna obligatoria.</td></tr>
+            <tr><th scope="row">Dominio</th><td>El primer año incluido, registrado a tu nombre.</td></tr>
+            <tr><th scope="row">Cambios</th><td>Hasta dos rondas antes de publicar.</td></tr>
+            <tr><th scope="row">Entrega</th><td>Entre 7 y 14 días desde que me llegan las fotos, el menú y los horarios.</td></tr>
+            <tr><th scope="row">Opcionales, con precio aparte</th><td>Mantenimiento mensual (cambios de precios, fotos y horarios), email con tu dominio, reservas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso" aria-labelledby="h-proceso">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-proceso">Cómo trabajo</h2>
+        <p>Primero te doy algo, después hablamos, y recién ahí se paga. Cuatro pasos.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>El repaso, gratis</h3><p>Me pasás el nombre del local o tu Instagram. Miro cómo aparecés en Google Maps, en Instagram y en tu web si tenés, y te mando por WhatsApp dos o tres cosas concretas que te estás perdiendo. Lo armo a mano, no es un informe automático. Sin compromiso.</p></li>
+        <li><h3>Una charla de 15 minutos</h3><p>Por WhatsApp, por llamada o en el local, como prefieras. Hablamos de qué se pide más, de los horarios y de las fotos que tenés. Si querés seguir, pagás la primera mitad y arranco.</p></li>
+        <li><h3>Diseño y textos</h3><p>Con tus fotos, el menú y los horarios armo la página y te mando el link para que la veas en tu celular. Me decís qué cambiar; hay hasta dos rondas de cambios.</p></li>
+        <li><h3>Publicación y entrega</h3><p>Conecto el dominio, la publico y te paso los accesos, todo a tu nombre. Ahí pagás la segunda mitad. La web queda tuya.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="quien" aria-labelledby="h-quien">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-quien">Quién soy</h2>
+      </div>
+      <div class="me">
+        <img src="img/izan.jpg" width="800" height="1000" loading="lazy" alt="Izan, con campera azul, sacándose una foto frente a un espejo con el celular.">
+        <div>
+          <p class="hola">Hola, soy Izan.</p>
+          <p>Tengo 16 años, vivo en Buenos Aires y estudio ciberseguridad. ClearSites soy yo: el que te contesta el WhatsApp es el mismo que diseña, escribe y publica tu web.</p>
+          <p>Hago páginas para locales gastronómicos de barrio: cafés, parrillas, pizzerías, panaderías. Son páginas chicas, de una sola pantalla larga, y me importa que se entiendan rápido: qué venden, cuándo abren y cómo se pide.</p>
+          <p>Si querés ver otras cosas que hago, está <a href="https://izan.me">izan.me</a>. En Instagram soy <a href="https://www.instagram.com/izandiazph">@izandiazph</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas" aria-labelledby="h-preguntas">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-preguntas">Preguntas</h2>
+      </div>
+      <div class="faq">
+        <div><h3>¿Qué necesito mandarte?</h3><p>Fotos del local y de la comida (con el celular está bien), el menú con precios, los horarios, la dirección y el número de WhatsApp donde querés recibir pedidos. Si tenés logo, mejor; si no, se resuelve con tipografía.</p></div>
+        <div><h3>¿Cuánto tarda?</h3><p>Entre 7 y 14 días desde que me llega el material. La fecha la acordamos en la charla, antes de empezar.</p></div>
+        <div><h3>¿Puedo cambiar el menú después?</h3><p>Sí. Cambios puntuales de precios o platos con precio aparte, o el mantenimiento mensual para cambiar precios, fotos y horarios cuando quieras.</p></div>
+        <div><h3>¿Qué pasa con el dominio al año?</h3><p>El primer año está incluido y queda registrado a tu nombre. Al año siguiente lo renovás vos directamente, o lo gestiono yo si tenés el mantenimiento. El dominio es tuyo, no mío.</p></div>
+        <div><h3>¿Hacés pedidos con pago online?</h3><p>No. La web manda el pedido por WhatsApp, que es lo que tus clientes ya usan. Un sistema de pedidos con pago online es otro proyecto; si lo necesitás, lo charlamos aparte.</p></div>
+        <div><h3>¿Y si ya tengo una web?</h3><p>Te mando el repaso igual, incluyendo la web. Si está bien, te lo digo y listo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" aria-labelledby="h-contacto">
+    <div class="wrap">
+      <div class="head rule">
+        <h2 id="h-contacto">Escribime</h2>
+        <p>Mandame el nombre de tu local o tu Instagram y te devuelvo el repaso gratis. Contestás vos cuando quieras.</p>
+      </div>
+      <div class="contact">
+        <div>
+          <span class="mono">WhatsApp</span>
+          <a class="big" href="https://wa.me/5491172505735?text=Hola%20Izan%2C%20quiero%20el%20repaso%20gratis%20de%20mi%20local.">+54 9 11 7250-5735</a>
+          <p>Se abre con el mensaje ya escrito. Lo leo yo.</p>
+        </div>
+        <div>
+          <span class="mono">Email</span>
+          <a class="big" href="mailto:diazgomezizan@gmail.com">diazgomezizan@gmail.com</a>
+          <p>Si preferís escribir con calma. Te contesto por el mismo medio.</p>
+        </div>
+      </div>
+      <p class="also"><a href="https://www.instagram.com/izandiazph">Instagram @izandiazph</a> <a href="https://izan.me">izan.me</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ClearSites · Buenos Aires · 2026</span>
+    <span>Hecha por Izan, a mano. Las cuatro demos son locales inventados.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.toggle'),m=document.getElementById('menu');
+  if(!b||!m)return;
+  b.addEventListener('click',function(){
+    var open=b.getAttribute('aria-expanded')==='true';
+    b.setAttribute('aria-expanded',String(!open));
+    m.classList.toggle('open',!open);
+  });
+  m.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');m.classList.remove('open');}
+  });
+})();
+</script>
+</body>
+</html>
