@@ -1,14 +1,8 @@
-# Solo se publica el sitio: index.html, demos/ e img/. Todo lo demás es trabajo interno.
-_refs/
-_v1/
-prospectos/
+# Solo se publica el sitio: index.html, demos/, img/ y README.md. Todo lo demás es trabajo interno.
+ventas/
+diseno/
 tools/
-VENTAS.md
-AUDITORIA.md
-DESIGN.md
-V2.md
-IMAGES.md
+CLAUDE.md
 NOTAS.md
 *.log
 .DS_Store
-CLAUDE.md
